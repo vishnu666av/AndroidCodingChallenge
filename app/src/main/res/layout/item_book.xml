@@ -1,0 +1,166 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="book"
+            type="com.example.otchallenge.model.Book" />
+    </data>
+
+
+   <!-- <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp" >
+
+        <ImageView
+            android:id="@+id/book_Image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintEnd_toStartOf="@+id/book_details"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/book_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/book_Image"
+            app:layout_constraintEnd_toEndOf="@id/info_icon"
+            app:layout_constraintTop_toTopOf="@id/book_Image"
+            app:layout_constraintBottom_toBottomOf="@id/book_Image"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:id="@+id/book_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="@{book.title}"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/book_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:maxLines="1"
+                android:text="@{book.author}"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/book_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@{book.description}"
+                android:textColor="@android:color/black"
+                android:ellipsize="end" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/info_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="info"
+            android:src="@drawable/info_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp" >
+
+        <ImageView
+            android:id="@+id/book_Image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintEnd_toStartOf="@+id/book_details"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/book_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/book_Image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/book_Image"
+            app:layout_constraintBottom_toBottomOf="@id/book_Image"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/book_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="@{book.title}"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/info_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/info_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="info"
+                android:src="@drawable/info_icon"
+                app:layout_constraintTop_toTopOf="@id/book_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="4dp" />
+
+            <TextView
+                android:id="@+id/book_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:maxLines="1"
+                android:text="@{book.author}"
+                android:ellipsize="end"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/book_title"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/book_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@{book.description}"
+                android:textColor="@android:color/black"
+                android:ellipsize="end"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/book_author"
+                android:layout_marginTop="4dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

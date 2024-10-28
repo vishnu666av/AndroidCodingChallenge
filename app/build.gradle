@@ -20,7 +20,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -30,6 +30,12 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    viewBinding {
+        enable = true
+    }
+    buildFeatures {
+        dataBinding true
     }
 }
 
@@ -47,6 +53,7 @@ dependencies {
     //retrofit
     implementation libs.retrofit
     implementation libs.retrofit.rx.adapter
+    implementation libs.retrofit.rx.converter
 
     //glide
     implementation libs.glide
@@ -56,7 +63,13 @@ dependencies {
     implementation libs.rx.java
     implementation libs.rx.kotlin
 
+    // Swipe to refresh layout
+    implementation libs.androidx.swiperefreshlayout
+
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
+    testImplementation libs.mockito.core
+    testImplementation libs.mockito.inline
+    testImplementation libs.kotlinx.coroutines.test
 }
